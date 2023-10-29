@@ -155,16 +155,18 @@
                             </table>
                         </div>
                         <div class="product-details-frame">
-                            <h3 class="frame-title">Reviews (2)</h3>
+                            <h3 class="frame-title">Reviews ({{object.product_review.all|length}})</h3>
                             <ul class="review-list">
+                                {% for review in object.product_review.all %}
                                 <li class="review-item">
                                     <div class="review-media">
                                         <a class="review-avatar" href="#">
                                             <img src="images/avatar/01.jpg" alt="review">
                                         </a>
                                         <h5 class="review-meta">
-                                            <a href="#">miron mahmud</a>
+                                            <a href="#">{{review.user}}</a>
                                             <span>June 02, 2020</span>
+                                            <span>{{review.create_date}}</span>
                                         </h5>
                                     </div>
                                     <ul class="review-rating">
@@ -174,12 +176,9 @@
                                         <li class="icofont-ui-rating"></li>
                                         <li class="icofont-ui-rate-blank"></li>
                                     </ul>
-                                    <p class="review-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus hic amet qui velit, molestiae suscipit perferendis, autem doloremque blanditiis dolores nulla excepturi ea nobis!</p>
-                                    <form class="review-reply">
-                                        <input type="text" placeholder="reply your thoughts">
-                                        <button><i class="icofont-reply"></i>reply</button>
-                                    </form>
-                                    <ul class="review-reply-list">
+                                    <p class="review-desc">{{review.review}}</p>
+                                  
+                        
                                         <li class="review-reply-item">
                                             <div class="review-media">
                                                 <a class="review-avatar" href="#">
@@ -214,29 +213,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="review-item">
-                                    <div class="review-media">
-                                        <a class="review-avatar" href="#">
-                                            <img src="images/avatar/04.jpg" alt="review">
-                                        </a>
-                                        <h5 class="review-meta">
-                                            <a href="#">shipu shikdar</a>
-                                            <span>June 02, 2020</span>
-                                        </h5>
-                                    </div>
-                                    <ul class="review-rating">
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rating"></li>
-                                        <li class="icofont-ui-rate-blank"></li>
-                                    </ul>
-                                    <p class="review-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus hic amet qui velit, molestiae suscipit perferendis, autem doloremque blanditiis dolores nulla excepturi ea nobis!</p>
-                                    <form class="review-reply">
-                                        <input type="text" placeholder="reply your thoughts">
-                                        <button><i class="icofont-reply"></i>reply</button>
-                                    </form>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                         <div class="product-details-frame">
