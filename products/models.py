@@ -15,7 +15,7 @@ FLAG_TYPES = (
 
 # Create your models here.
 class Product(models.Model):
-    name = models.CharField(_('Name'),max_length=120)
+    name = models.CharField(_('name'),max_length=120)
     description = models.TextField(_('description'),max_length=30000)
     sku = models.IntegerField(_('sku'))
     price = models.FloatField(_('price'))
